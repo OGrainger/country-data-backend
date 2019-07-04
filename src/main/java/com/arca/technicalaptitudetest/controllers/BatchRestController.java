@@ -1,5 +1,7 @@
 package com.arca.technicalaptitudetest.controllers;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
@@ -9,13 +11,15 @@ import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
-@org.springframework.web.bind.annotation.RestController
-
-@Controller
+@Slf4j
+@RestController
+@RequiredArgsConstructor
+@CrossOrigin("http://localhost:8081")
 public class BatchRestController {
 
     @Autowired
